@@ -10,35 +10,61 @@ A modern, cross-platform desktop application built with **Python** and **CustomT
 
 ---
 
-## 🛠️ Prerequisites
-Before running the application, ensure you have **Python 3.x** installed.
+## 🛠️ Installation
 
-### 1. Clone the Repository
+### 1. Prerequisites
+Ensure you have **Python 3.x** installed on your system.
+
+### 2. Clone the Repository
 ```bash
 git clone [https://github.com/KostasSot/qrcodegenerator.git](https://github.com/KostasSot/qrcodegenerator.git)
 cd qrcodegenerator
+```
 
-### 2. Install Dependencies
-This project relies on external libraries (like customtkinter, pillow, and qrcode). Install them automatically using the requirements file:
-
-Bash
-
+### 3. Install Dependencies
+Install the required libraries (CustomTkinter, Pillow, etc.) using the requirements file:
+```bash
 pip install -r requirements.txt
+```
 
-🚀 How to Run
-🖥️ Windows
-Open Command Prompt or PowerShell in the project folder.
+---
 
-Run the application:
+## 🚀 How to Run
 
-PowerShell
+### 🖥️ Windows
+1. Open Command Prompt or PowerShell in the project folder.
+2. Run the application:
+   ```powershell
+   python main.py
+   ```
 
-python main.py
-🍎 macOS / Linux
-Open Terminal in the project folder.
+### 🍎 macOS / Linux
+1. Open Terminal in the project folder.
+2. Run the application:
+   ```bash
+   python3 main.py
+   ```
 
-Run the application:
+---
 
-Bash
+## ⚠️ Troubleshooting: Window Not Updating?
 
-python3 main.py
+If you are a developer making changes to the code (e.g., changing window size or colors) and the app keeps launching with old settings, you likely have a **Zombie Process** or **Cache** issue.
+
+### 1. Force Close Stuck Processes
+The application might still be running in the background even if the window is closed.
+* **Windows:** Open Task Manager (`Ctrl+Shift+Esc`), find `python.exe`, and select **End Task**.
+* **macOS:** Open Activity Monitor, search for `Python`, and select **Force Quit**.
+
+### 2. Clean Cache & Run (The "Hard" Restart)
+Use these commands to delete temporary compiled files and force a fresh launch.
+
+**For Windows:**
+```powershell
+del /S *.pyc && python main.py
+```
+
+**For macOS:**
+```bash
+find . -name "*.pyc" -delete && python3 main.py
+```
